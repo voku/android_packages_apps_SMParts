@@ -397,4 +397,43 @@
   <string name="pref_statusbar_music_controls_summary">Wyświetl przyciski funkcyjne na pasku powiadamiania</string>
   <string name="pref_statusbar_always_music_controls_title">Zawsze wyświetlaj przyciski odtwarzacza</string>
   <string name="pref_statusbar_always_music_controls_summary">Wyświetlaj przyciski odtwarzacza niezależnie od tego, czy muzyka jest odtwarzana czy też nie</string>
+  
+  <!-- Performance Settings : CPU Settings -->
+
+  <string name="cpu_settings_title">Ustawienia CPU</string>
+  <string name="cpu_title">Ustawienia CPU</string>
+  <string name="cpu_summary">Regulator oraz taktowanie</string>
+  <string name="cpu_governors_title">Dostępne regulatory</string>
+  <string name="cpu_governors_summary">Lista regulatorów dostępnych w kernelu\nObecny: %S</string>
+  <string name="cpu_min_freq_title">Min. taktowanie CPU</string>
+  <string name="cpu_min_freq_summary">Minimalne taktowanie CPU\nObecnie: %s</string>
+  <string name="cpu_max_freq_title">Max. taktowanie CPU</string>
+  <string name="cpu_max_freq_summary">Maksymalne taktowanie CPU\nObecnie: %s</string>
+  <string name="cpu_set_on_boot">Ustaw przy starcie</string>
+  <string name="cpu_set_on_boot_summary">Automatycznie ustawiaj te wartości przy starcie telefonu</string>
+
+  <!-- Lockscreen Settings -->
+  <string name="lockscreen_style_title">Wygląd</string>
+  <string name="lockscreen_style_summary">Ustaw wygląd i zachowanie ekranu blokady</string>
+  <string name="lockscreen_widgets_title">Widgety</string>
+  <string name="lockscreen_widgets_summary">Włącz lub wyłącz widgety na ekranie blokady</string>
+  <string name="lockscreen_unlock_title">Odblokowywanie</string>
+  <string name="lockscreen_unlock_summary">Ustawienie odblokowywania np. klawiszami</string>
+  <string name="lockscreen_gestures_title">Gesty</string>
+  <string name="lockscreen_gestures_summary">Ustaw gesty na ekranie blokady i ustaw ich akcję</string>
+  <string name="lockscreen_timeout_title">Opóźnienie i czas oczekiwania</string>
+  <string name="lockscreen_timeout_summary">Ustaw czas oczek. ekranu oraz opóźnienie blokady</string>
+
+ <!-- Lockscreen Settings : Style -->
+    <string name="lockscreen_mode_title">Styl blokady</string>
+    <string name="lockscreen_mode_summary">Wybierz styl blokady</string>
+    <string name="lockscreen_custom_app_toggle_title">Starter aplikacji</string>
+    <string name="lockscreen_custom_app_toggle_summary">Pokaże drugi slider na obrotowym ekranie blokady, który uruchomi wybraną aplikację</string>
+    <string name="lockscreen_custom_app_activity_title">Własne aplikacje</string>
+    <string name="lockscreen_rotary_title">Obrotowy</string>
+    <string name="lockscreen_rotary_unlock_down_title">Przeciągnij w dół by odblokować</string>
+    <string name="lockscreen_rotary_unlock_down_summary">Dragging down rotary wheel unlocks. Dragging right starts custom app</string>
+    <string name="lockscreen_rotary_hide_arrows_title">Hide rotary arrows</string>
+    <string name="lockscreen_rotary_hide_arrows_summary">Hides the directional hint arrows on rotary style</string>
+
 </resources>
