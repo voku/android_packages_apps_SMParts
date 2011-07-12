@@ -4,9 +4,6 @@
     <string name="app_name">SpicagenMod settings</string>
 
     <!--  Primary Screen Settings -->
-    <!--  Update Notifications -->
-    <string name="update_settings_title_head">Updates</string>
-    <string name="update_settings_summary_head">Get notifications of OTA updates</string>
     <string name="application_settings_title_head">Application</string>
     <string name="application_settings_title_subhead">Application settings</string>
     <string name="application_settings_summary_head">Application moving, install location</string>
@@ -481,6 +478,10 @@
     <string name="user_defined_key2">Quick Key 2</string>
     <string name="user_defined_key3">Quick Key 3</string>
     <string name="user_defined_not_set">Nothing Set</string>
+
+    <!-- Low Battery  Sounds -->
+    <string name="power_sounds_enable_title">Low battery sound</string>
+    <string name="power_sounds_enable_summary">Play a sound when battery is low</string>
 
     <!--  Lockscreen gesture strings -->
     <string name="pref_lockscreen_title">Lockscreen gestures</string>
