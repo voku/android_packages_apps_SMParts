@@ -97,12 +97,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ExtendedLockscreenActivity"
-            android:label="@string/ext_ls_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
         <activity android:name=".activities.LongPressHomeActivity"
             android:label="@string/long_press_home_title">
             <intent-filter>

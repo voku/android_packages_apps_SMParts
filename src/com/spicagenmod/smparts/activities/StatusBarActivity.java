@@ -16,9 +16,6 @@ public class StatusBarActivity extends PreferenceActivity {
     /* Display Battery Percentage */
     private static final String BATTERY_PERCENTAGE_PREF = "pref_battery_percentage";
     private CheckBoxPreference mBatteryPercentagePref;
-    /* Battery Percentage Font Color */
-    private static final String UI_BATTERY_PERCENT_COLOR = "battery_status_color_title";
-    private Preference mBatteryPercentColorPreference;
     /* Display Clock */
     private static final String UI_SHOW_STATUS_CLOCK = "show_status_clock";
     private CheckBoxPreference mShowClockPref;
@@ -50,8 +47,6 @@ public class StatusBarActivity extends PreferenceActivity {
         mBatteryPercentagePref = (CheckBoxPreference) prefSet.findPreference(BATTERY_PERCENTAGE_PREF);
         mBatteryPercentagePref.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.BATTERY_PERCENTAGE_STATUS_ICON, 0) == 1);
-        /* Battery Percentage Color */
-        mBatteryPercentColorPreference = prefSet.findPreference(UI_BATTERY_PERCENT_COLOR);
         /* Show Clock */
         mShowClockPref = (CheckBoxPreference) prefSet.findPreference(UI_SHOW_STATUS_CLOCK);
         mShowClockPref.setChecked(Settings.System.getInt(getContentResolver(),
@@ -81,10 +76,6 @@ public class StatusBarActivity extends PreferenceActivity {
             value = mBatteryPercentagePref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.BATTERY_PERCENTAGE_STATUS_ICON, value ? 1 : 0);
-        }
-        /* Battery Font Color */
-        else if (preference == mBatteryPercentColorPreference) {
-            showColorPicker(mBatteryColorHandler);
         }
         /* Display Clock */
         else if (preference == mShowClockPref) {
@@ -129,9 +120,6 @@ public class StatusBarActivity extends PreferenceActivity {
         Intent timeChanged = new Intent(Intent.ACTION_TIME_CHANGED);
         sendBroadcast(timeChanged);
     }
-
-    /* Battery Font Color */
-    SettingsColorHandler mBatteryColorHandler = new SettingsColorHandler(Settings.System.BATTERY_PERCENTAGE_STATUS_COLOR, -1);
 
     /* Clock Font Color */
     SettingsColorHandler mClockColorHandler = new SettingsColorHandler(Settings.System.CLOCK_COLOR, -16777216);

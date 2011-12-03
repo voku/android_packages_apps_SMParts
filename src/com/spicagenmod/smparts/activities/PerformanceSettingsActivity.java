@@ -33,7 +33,7 @@ public class PerformanceSettingsActivity extends PreferenceActivity implements P
     private static final String HEAPSIZE_PREF = "pref_heapsize";
     private static final String HEAPSIZE_PROP = "dalvik.vm.heapsize";
     private static final String HEAPSIZE_PERSIST_PROP = "persist.sys.vm.heapsize";
-    private static final String HEAPSIZE_DEFAULT = "16m";
+    private static final String HEAPSIZE_DEFAULT = "32m";
     private static final String USE_DITHERING_PREF = "pref_use_dithering";
     private static final String USE_DITHERING_PERSIST_PROP = "persist.sys.use_dithering";
     private static final String USE_DITHERING_DEFAULT = "1";
@@ -42,10 +42,10 @@ public class PerformanceSettingsActivity extends PreferenceActivity implements P
     private static final String LOCK_PHONE_PREF = "pref_lock_phone";
     private static final String LOCK_CONTACTS_PREF = "pref_lock_contacts";
     private static final String LOCK_SU_PREF = "pref_lock_su";
-    private static final int LOCK_HOME_DEFAULT = 0;
-    private static final int LOCK_MMS_DEFAULT = 0;
-    private static final int LOCK_PHONE_DEFAULT = 0;
-    private static final int LOCK_CONTACTS_DEFAULT = 0;
+    private static final int LOCK_HOME_DEFAULT = 1;
+    private static final int LOCK_MMS_DEFAULT = 1;
+    private static final int LOCK_PHONE_DEFAULT = 1;
+    private static final int LOCK_CONTACTS_DEFAULT = 1;
     private static final int LOCK_SU_DEFAULT = 0;
 
     private ListPreference mCompcachePref;

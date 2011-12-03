@@ -16,7 +16,6 @@ public class NotificationsActivity extends PreferenceActivity {
     private static final String UI_LATEST_NOTIF_COLOR = "latest_notifications_color";
     private static final String UI_ONGOING_NOTIF_COLOR = "ongoing_notifications_color";
     private static final String UI_CLEAR_LABEL_COLOR = "clear_button_label_color";
-    private static final String UI_BATTERY_PERCENT_COLOR = "battery_status_color_title";
     private static final String UI_NOTIF_TICKER_COLOR = "new_notifications_ticker_color";
     private static final String UI_NOTIF_COUNT_COLOR = "notifications_count_color";
     private static final String UI_NOTIF_ITEM_TITLE_COLOR = "notifications_title_color";

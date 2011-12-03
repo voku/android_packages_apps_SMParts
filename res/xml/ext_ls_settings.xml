@@ -2,14 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="ext_ls_settings">
     
-    <!-- TODO: background selection 
-    <PreferenceScreen android:key="ext_ls_background"
-        android:title="@string/ext_ls_background_title">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.spicagenmod.smparts"
-            android:targetClass="com.spicagenmod.smparts.activities.ExtendedLockscreenActivity" />
-    </PreferenceScreen> -->
-
     <CheckBoxPreference android:key="ext_ls_background" android:title="@string/ext_ls_background_title"
         android:summaryOn="@string/ext_ls_background_summaryon" android:summaryOff="@string/ext_ls_background_summaryoff" />
 
