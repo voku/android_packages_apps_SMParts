@@ -275,6 +275,10 @@
     <string name="pref_heapsize_title">VM heap size</string>
     <string name="pref_heapsize_summary">Maximum amount of memory per VM heap (requires reboot)</string>
 
+    <!-- Performance : Disable bootanimation -->
+    <string name="pref_disable_bootanimation_title">Disable boot animation</string>
+    <string name="pref_disable_bootanimation_summary">Don\'t show the boot animation for faster boot</string>
+
     <!-- Performance : Lock home memory -->
     <string name="pref_lock_home_title">Lock home in memory</string>
     <string name="pref_lock_home_summary">Attempt to keep the current home app in memory at all times</string>
@@ -435,6 +439,8 @@
     <string name="widget_max_buttons">14 is the max amount of buttons.</string>
 
     <!-- Sound -->
+    <string name="sound_default_volume_media_title">Default volume control to media</string>
+    <string name="sound_default_volume_media_summary">Make volume control default to media instead of ringer</string>
     <string name="sound_title">Sound settings</string>
     <string name="sound_summary">Sound and audio focus settings</string>
     <string name="sound_notifications_focus_title">Notification focus</string>

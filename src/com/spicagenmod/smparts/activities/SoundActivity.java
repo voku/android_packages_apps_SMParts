@@ -31,6 +31,7 @@ public class SoundActivity extends PreferenceActivity implements
     private static final String NOTIFICATIONS_ATTENUATION = "notif-attn";
     private static final String NOTIFICATIONS_LIMITVOL = "notif-limitvol";
     private static final String VOLUME_CONTROL_SILENT = "vol-ctrl-silent";
+    private static final String DEFAULT_VOLUME_MEDIA = "default-volume-media";
     private static final String RINGS_SPEAKER = "ring-speaker";
     private static final String RINGS_ATTENUATION = "ring-attn";
     private static final String RINGS_LIMITVOL = "ring-limitvol";
@@ -81,7 +82,7 @@ public class SoundActivity extends PreferenceActivity implements
 
         CheckBoxPreference p = (CheckBoxPreference) prefSet.findPreference(NOTIFICATIONS_FOCUS);
         p.setChecked(Settings.System.getInt(getContentResolver(),
-                                            Settings.System.NOTIFICATIONS_AUDIO_FOCUS, 1) != 0);
+                Settings.System.NOTIFICATIONS_AUDIO_FOCUS, 1) != 0);
         p.setOnPreferenceChangeListener(this);
 
         p = (CheckBoxPreference) prefSet.findPreference(NOTIFICATIONS_SPEAKER);
@@ -92,6 +93,10 @@ public class SoundActivity extends PreferenceActivity implements
         p.setChecked(Settings.System.getInt(getContentResolver(),
                                             Settings.System.VOLUME_CONTROL_SILENT, 0) != 0);
         p.setOnPreferenceChangeListener(this);
+
+        p = (CheckBoxPreference) prefSet.findPreference(DEFAULT_VOLUME_MEDIA);
+        p.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DEFAULT_VOLUME_CONTROL_MEDIA, 0) != 0);
 
         p = (CheckBoxPreference) prefSet.findPreference(RINGS_SPEAKER);
         p.setChecked(SystemProperties.getBoolean(getKey(RINGS_SPEAKER), false));
@@ -183,6 +188,9 @@ public class SoundActivity extends PreferenceActivity implements
                     getBoolean(newValue) ? 1 : 0);
         } else if (key.equals (VOLUME_CONTROL_SILENT)) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_CONTROL_SILENT,
+                    getBoolean(newValue) ? 1 : 0);
+        } else if (key.equals(DEFAULT_VOLUME_MEDIA)) {
+            Settings.System.putInt(getContentResolver(), Settings.System.DEFAULT_VOLUME_CONTROL_MEDIA,
                     getBoolean(newValue) ? 1 : 0);
         } else if (key.equals(NOTIFICATIONS_SPEAKER) || key.equals(RINGS_SPEAKER)
                 || key.equals(ALARMS_SPEAKER)) {

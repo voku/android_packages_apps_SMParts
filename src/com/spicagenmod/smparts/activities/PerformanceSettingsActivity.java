@@ -36,21 +36,25 @@ public class PerformanceSettingsActivity extends PreferenceActivity implements P
     private static final String HEAPSIZE_DEFAULT = "32m";
     private static final String USE_DITHERING_PREF = "pref_use_dithering";
     private static final String USE_DITHERING_PERSIST_PROP = "persist.sys.use_dithering";
-    private static final String USE_DITHERING_DEFAULT = "1";
+    private static final String USE_DITHERING_DEFAULT = "0";
+    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0"; 
     private static final String LOCK_HOME_PREF = "pref_lock_home";
     private static final String LOCK_MMS_PREF = "pref_lock_mms";
     private static final String LOCK_PHONE_PREF = "pref_lock_phone";
     private static final String LOCK_CONTACTS_PREF = "pref_lock_contacts";
     private static final String LOCK_SU_PREF = "pref_lock_su";
-    private static final int LOCK_HOME_DEFAULT = 1;
-    private static final int LOCK_MMS_DEFAULT = 1;
-    private static final int LOCK_PHONE_DEFAULT = 1;
-    private static final int LOCK_CONTACTS_DEFAULT = 1;
+    private static final int LOCK_HOME_DEFAULT = 0;
+    private static final int LOCK_MMS_DEFAULT = 0;
+    private static final int LOCK_PHONE_DEFAULT = 0;
+    private static final int LOCK_CONTACTS_DEFAULT = 0;
     private static final int LOCK_SU_DEFAULT = 0;
 
     private ListPreference mCompcachePref;
     private CheckBoxPreference mJitPref;
     private CheckBoxPreference mUseDitheringPref;
+    private CheckBoxPreference mDisableBootanimPref;
     private CheckBoxPreference mLockHomePref;
     private CheckBoxPreference mLockMmsPref;
     private CheckBoxPreference mLockPhonePref;
@@ -94,6 +98,10 @@ public class PerformanceSettingsActivity extends PreferenceActivity implements P
         mHeapsizePref.setValue(SystemProperties.get(HEAPSIZE_PERSIST_PROP,
                 SystemProperties.get(HEAPSIZE_PROP, HEAPSIZE_DEFAULT)));
         mHeapsizePref.setOnPreferenceChangeListener(this);
+
+        mDisableBootanimPref = (CheckBoxPreference) prefSet.findPreference(DISABLE_BOOTANIMATION_PREF);
+        String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
+        mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
 
         mLockHomePref = (CheckBoxPreference) prefSet.findPreference(LOCK_HOME_PREF);
         mLockHomePref.setChecked(Settings.System.getInt(getContentResolver(),
@@ -140,6 +148,14 @@ public class PerformanceSettingsActivity extends PreferenceActivity implements P
                     mUseDitheringPref.isChecked() ? "1" : "0");
             return true;
         }
+
+
+        if (preference == mDisableBootanimPref) {
+            SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
+                    mDisableBootanimPref.isChecked() ? "1" : "0");
+            return true;
+        }
+
         if (preference == mLockHomePref) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCK_HOME_IN_MEMORY, mLockHomePref.isChecked() ? 1 : 0);

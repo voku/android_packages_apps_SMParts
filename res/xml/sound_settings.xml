@@ -17,6 +17,12 @@
             android:summary="@string/sound_volume_control_silent_summary"
             android:persistent="false" />
 
+        <!-- Default volume media -->
+        <CheckBoxPreference android:key="default-volume-media"
+            android:title="@string/sound_default_volume_media_title"
+            android:summary="@string/sound_default_volume_media_summary"
+            android:persistent="false" />
+
     </PreferenceCategory>
 
     <!-- Some spacing -->
